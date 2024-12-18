@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <style>
+        .Frame1 {
+            width: 1920px;
+            height: 1080px;
+            position: relative;
+            background: black;
+        }
+
+        .Car31 {
+            width: 1920px;
+            height: 1080px;
+            left: 0px;
+            top: 0px;
+            position: absolute;
+        }
+
+        .Text1, .EMail, .Password, .Phone, .Phone1, .Title {
+            position: absolute;
+            color: white;
+            font-size: 32px;
+            font-family: Inria Serif;
+            font-weight: 400;
+            word-wrap: break-word;
+        }
+
+        .Text1 {
+            width: 225px;
+            height: 37px;
+            left: 108px;
+            top: 37px;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .Phone {
+            width: 278px;
+            left: 1565px;
+            top: 37px;
+        }
+
+        .Vector1 {
+            width: 1704px;
+            height: 0px;
+            left: 108px;
+            top: 110px;
+            position: absolute;
+            border: 1px #C2B9B9 solid;
+        }
+
+        .Title {
+            left: 810px;
+            top: 162px;
+            font-size: 48px;
+        }
+
+        .Logo1 {
+            width: 70px;
+            height: 70px;
+            left: 17px;
+            top: 20px;
+            position: absolute;
+            border-radius: 20px;
+        }
+
+        .Rectangle4 {
+            width: 300px;
+            height: 50px;
+            left: 810px;
+            top: 653px;
+            background: white;
+            border-radius: 25px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+        }
+
+        .EMail {
+            width: 278px;
+            left: 726px;
+            top: 272px;
+        }
+
+        .Password {
+            width: 300px;
+            left: 726px;
+            top: 400px;
+        }
+
+        .Phone1 {
+            width: 300px;
+            left: 726px;
+            top: 525px;
+        }
+
+        .Flag1 {
+            width: 50px;
+            height: 50px;
+            left: 726px;
+            top: 574px;
+            position: absolute;
+        }
+
+        .PhonePrefix {
+            position: absolute;
+            left: 786px;
+            top: 580px;
+            color: white;
+            font-size: 32px;
+            font-family: Inria Serif;
+            font-weight: 400;
+        }
+
+        .ButtonText {
+            color: black;
+            font-size: 32px;
+            font-family: Inria Serif;
+            font-weight: 400;
+            text-decoration: underline;
+            word-wrap: break-word;
+        }
+
+        input {
+            width: 490px;
+            height: 60px;
+            position: absolute;
+            left: 715px;
+            font-size: 24px;
+            padding: 5px;
+            border-radius: 25px;
+            border: none;
+        }
+
+        .EmailInput {
+            top: 315px;
+        }
+
+        .PasswordInput {
+            top: 442px;
+        }
+
+        .PhoneInput {
+            top: 569px;
+            left: 850px;
+            width: 355px;
+        }
+    </style>
+</head>
+<body>
+    <div class="Frame1">
+        <img class="Car31" src="car3.jfif" />
+        <div class="Text1" onclick="window.location.href='index.html'">АвтоКомплекс</div>
+        <div class="Phone">+7 (929) 592-40-80</div>
+        <div class="Vector1"></div>
+        <div class="Title">Регистрация</div>
+        <div class="EMail">E-mail</div>
+        <div class="Password">Пароль</div>
+        <div class="Phone1">Номер телефона</div>
+        <img class="Flag1" src="flag.png" />
+        <div class="PhonePrefix">+7</div>
+        <div class="Rectangle4" onclick="validateForm()">
+            <div class="ButtonText">Регистрация</div>
+        </div>
+        <img class="Logo1" src="logo.png" />
+        <input type="email" class="EmailInput" id="email" placeholder="Введите E-mail">
+        <input type="password" class="PasswordInput" id="password" placeholder="Введите пароль">
+        <input type="tel" class="PhoneInput" id="phone" placeholder="Введите номер телефона" oninput="validatePhoneInput(this)">
+    </div>
+    <script>
+        function validateForm() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const phone = document.getElementById('phone').value;
+
+            if (email.trim() === '' || password.trim() === '' || phone.trim() === '') {
+                alert('Пожалуйста, заполните все поля!');
+            } else {
+                alert('Регистрация успешно завершена!');
+                window.location.href = 'login.html';
+            }
+        }
+        function validatePhoneInput(input) {
+            input.value = input.value.replace(/\D/g, '');
+        }
+    </script>
+</body>
+</html>

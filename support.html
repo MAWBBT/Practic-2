@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ТехПоддержка</title>
+    <style>
+        .Frame1 {
+            width: 1920px;
+            height: 1080px;
+            position: relative;
+            background: black;
+        }
+
+        .Ar41 {
+            width: 1440px;
+            height: 900px;
+            left: 845px;
+            top: 110px;
+            position: absolute;
+        }
+
+        .Text1, .Phone, .Title, .Description, .ButtonText {
+            position: absolute;
+            color: white;
+            font-size: 32px;
+            font-family: Inria Serif;
+            font-weight: 400;
+            word-wrap: break-word;
+        }
+
+        .Text1 {
+            width: 225px;
+            height: 37px;
+            left: 108px;
+            top: 37px;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .Phone {
+            width: 278px;
+            left: 1565px;
+            top: 37px;
+        }
+
+        .Title {
+            width: 550px;
+            left: 685px;
+            top: 162px;
+            font-size: 48px;
+        }
+
+        .Description {
+            width: 317px;
+            left: 703px;
+            top: 272px;
+        }
+
+        .Vector1 {
+            width: 1704px;
+            height: 0px;
+            left: 108px;
+            top: 110px;
+            position: absolute;
+            border: 1px #C2B9B9 solid;
+        }
+
+        .Rectangle4 {
+            width: 364px;
+            height: 50px;
+            left: 776px;
+            top: 690px;
+            position: absolute;
+            background: white;
+            border-radius: 25px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .Logo1 {
+            width: 70px;
+            height: 70px;
+            left: 17px;
+            top: 20px;
+            position: absolute;
+            border-radius: 20px;
+        }
+
+        .ButtonText {
+            color: black;
+            font-size: 40px;
+            text-decoration: underline;
+        }
+
+        textarea {
+            width: 536px;
+            height: 340px;
+            left: 690px;
+            top: 315px;
+            position: absolute;
+            background: white;
+            border-radius: 25px;
+            border: none;
+            padding: 10px;
+            font-size: 24px;
+            color: black;
+            font-family: Inria Serif;
+            font-weight: 400;
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="Frame1">
+        <img class="Ar41" src="ar4.jpg" />
+        <div class="Text1" onclick="window.location.href='index.html'">АвтоКомплекс</div>
+        <div class="Phone">+7 (929) 592-40-80</div>
+        <div class="Title">Обращение об ошибке</div>
+        <div class="Rectangle1"></div>
+        <div class="Description">Опишите проблему</div>
+        <div class="Vector1"></div>
+        <div class="Rectangle4" onclick="submitForm()">
+            <div class="ButtonText">Отправить</div>
+        </div>
+        <img class="Logo1" src="logo.png" />
+        <textarea id="problemDescription" placeholder="Введите описание проблемы"></textarea>
+    </div>
+    <script>
+        function submitForm() {
+            const description = document.getElementById('problemDescription').value;
+            if (description.trim() === '') {
+                alert('Пожалуйста, опишите проблему!');
+            } else {
+                alert('Обращение успешно отправлено!');
+                window.location.href = 'index.html';
+            }
+        }
+    </script>
+</body>
+</html>

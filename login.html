@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+    <style>
+        .Frame1 {
+            width: 1920px;
+            height: 1080px;
+            position: relative;
+            background: black;
+        }
+
+        .Car21 {
+            width: 1920px;
+            height: 1080px;
+            left: 0px;
+            top: 0px;
+            position: absolute;
+        }
+
+        .Text1, .EMail, .Password, .Phone, .Title, .Link1 {
+            position: absolute;
+            color: white;
+            font-size: 32px;
+            font-family: Inria Serif;
+            font-weight: 400;
+            word-wrap: break-word;
+        }
+
+        .Text1 {
+            width: 225px;
+            height: 37px;
+            left: 108px;
+            top: 37px;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .Phone {
+            width: 278px;
+            left: 1565px;
+            top: 37px;
+        }
+
+        .Vector1 {
+            width: 1704px;
+            height: 0px;
+            left: 108px;
+            top: 110px;
+            position: absolute;
+            border: 1px #C2B9B9 solid;
+        }
+
+        .Title {
+            left: 902px;
+            top: 162px;
+            font-size: 48px;
+        }
+
+        .Logo1 {
+            width: 70px;
+            height: 70px;
+            left: 17px;
+            top: 20px;
+            position: absolute;
+            border-radius: 20px;
+        }
+
+        .Rectangle4 {
+            width: 150px;
+            height: 50px;
+            left: 884px;
+            top: 550px;
+            background: white;
+            cursor: pointer;
+            display: flex;
+            border-radius: 25px;
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .EMail {
+            width: 278px;
+            left: 726px;
+            top: 272px;
+        }
+
+        .Password {
+            width: 278px;
+            left: 726px;
+            top: 399px;
+        }
+
+        .ButtonText {
+            color: black;
+            font-size: 32px;
+            font-family: Inria Serif;
+            font-weight: 400;
+            text-decoration: underline;
+            word-wrap: break-word;
+        }
+
+        input {
+            width: 490px;
+            height: 60px;
+            position: absolute;
+            left: 715px;
+            font-size: 24px;
+            padding: 5px;
+            border-radius: 25px;
+            border: none;
+        }
+
+        .EmailInput {
+            top: 315px;
+        }
+
+        .PasswordInput {
+            top: 442px;
+        }
+
+        .Link1 {
+            left: 1000px;
+            top: 510px;
+            font-size: 20px;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="Frame1">
+        <img class="Car21" src="car2.jpg" />
+        <div class="Text1" onclick="window.location.href='index.html'">АвтоКомплекс</div>
+        <div class="Phone">+7 (929) 592-40-80</div>
+        <div class="Vector1"></div>
+        <div class="Title">Вход</div>
+        <div class="EMail">E-mail</div>
+        <div class="Password">Пароль</div>
+        <div class="Rectangle1"></div>
+        <div class="Rectangle2"></div>
+        <div class="Rectangle4" onclick="validateForm()">
+            <div class="ButtonText">Вход</div>
+        </div>
+        <div class="Link1" onclick="window.location.href='registration.html'">Не зарегистрирован?</div>
+        <img class="Logo1" src="logo.png" />
+        <input type="email" class="EmailInput" id="email" placeholder="Введите E-mail">
+        <input type="password" class="PasswordInput" id="password" placeholder="Введите пароль">
+    </div>
+    <script>
+        function validateForm() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            if (email.trim() === '' || password.trim() === '') {
+                alert('Пожалуйста, заполните все поля!');
+            } else {
+                alert('Вход выполнен успешно!');
+                window.location.href = 'index.html';
+            }
+        }
+    </script>
+</body>
+</html>
